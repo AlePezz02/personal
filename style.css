@@ -35,12 +35,15 @@ body {
 .conteiner-colum {
    margin: 2%;
    position: absolute;
+   clear: both;
+   width: 100%;
 }
 
 .colum {
     width: 33%;
     height: auto;
     float: left;
+    font-size: x-large;
 }
 
 
@@ -54,18 +57,13 @@ body {
 
 .nav {
     position: fixed;
-}
-
-.button {
-    
+    text-align: center;
 }
 
 .conteiner-footer {
     background-color: blueviolet;
     width: 100%;
     height: 5rem;
-    margin: 0;
-    padding: 0;
     clear: both;
     position: fixed;
     bottom: 0;
@@ -89,4 +87,28 @@ body {
     float: right;
     clear: both;
     
+}
+
+.conteiner-card {
+    clear: both;
+    display: flex;
+    justify-content: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 400px;
+    padding-left: 100px;
+    padding-right: 100px;
+    position: sticky;
+}
+
+.donna{
+    z-index: 1;
+    position: absolute;
+}
+
+.x{
+    z-index: 2;
+    opacity: 0.5;
+    left: 100px;
+    position: relative;
 }
