@@ -6,109 +6,20 @@ body {
     background-color: rgb(62, 59, 59);
 }
 
-.conteiner-exercise {
-    width: 100%;
-}
-
-.testo-conteiner{
-    float:left;
-    width: 50%;
-    height: auto;
-}
-
-.image-conteiner{
-    float: right;
-    width: 50%;
-    height:auto;
-}
-
-.foto img {
-    width: 100%;
-}
-
-.under-para {
-    clear: both;
+.flexbox{
     display: flex;
-    justify-content: center;
-}
-
-.conteiner-colum {
-   margin: 2%;
-   position: absolute;
-   clear: both;
-   width: 100%;
-}
-
-.colum {
-    width: 33%;
-    height: auto;
-    float: left;
-    font-size: x-large;
-}
-
-
-.conteiner-nav {
+    flex-direction: column-reverse;
     width: 100%;
-    height: 2rem;
-    background-color: blueviolet;
-    border-radius: 9px;
+    height: 500px;
+    border: solid black;
+
 
 }
 
-.nav {
-    position: fixed;
-    text-align: center;
-}
-
-.conteiner-footer {
-    background-color: blueviolet;
-    width: 100%;
-    height: 5rem;
-    clear: both;
-    position: fixed;
-    bottom: 0;
-    text-align: center;
-    border-radius: 15px;
-}
-
-
-.conteiner-quadrato {
-    float: right;
-
-}
-
-
-.quadrato {
-    background-color: blue;
-    width: 110px;
-    height: 110px;
-    position: absolute;
-    bottom: 100px;
-    float: right;
-    clear: both;
-    
-}
-
-.conteiner-card {
-    clear: both;
+.box {
     display: flex;
-    justify-content: center;
-    justify-content: space-around;
+    align-items: center;
+    border: solid black;
+    height: 100%;
     width: 100%;
-    margin-top: 400px;
-    padding-left: 100px;
-    padding-right: 100px;
-    position: sticky;
-}
-
-.donna{
-    z-index: 1;
-    position: absolute;
-}
-
-.x{
-    z-index: 2;
-    opacity: 0.5;
-    left: 100px;
-    position: relative;
 }
