@@ -8,10 +8,12 @@ body {
 
 .flexbox{
     display: flex;
+    justify-content: center;
     flex-direction: row;
-    flex-wrap: wrap;
-    width: 500px;
-    height: 500px;
+    align-content: space-around;
+    flex-wrap: wap;
+    width: auto;
+    height: 20rem;
     border: solid black;
 
 
@@ -19,8 +21,30 @@ body {
 
 .box {
     display: flex;
+    justify-content: center;
     align-items: center;
+    flex-grow: ;
     border: solid black;
-    height: 100%;
-    width: 100%;
+    height: auto;
+    width: 500px;
+    font-size: 100px;
+}
+
+#box1{
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 7;
+}
+
+#box2 {
+    display: flex;
+    flex-basis: 250px;
+    align-self:flex-start;
+
+}
+
+#box3 {
+    display: flex;
+    flex-grow: 5;
+    align-self: flex-end;
 }
