@@ -1,7 +1,44 @@
 *{
   font-family: sans-serif;
+  margin: ;
+  padding: ;
 }
 
-.conteiner {
-    visibility: hidden;
+body {
+    background-color: rgb(62, 59, 59);
+}
+
+.conteiner-exercise {
+    width: 100%;
+}
+
+.testo-conteiner{
+    float:left;
+    width: 50%;
+    height: auto;
+}
+
+.image-conteiner{
+    float: right;
+    width: 50%;
+    height:auto;
+}
+
+.foto img {
+    width: 100%;
+}
+
+.under-para {
+    clear: both;
+    display: flex;
+    justify-content: center;
+}
+
+.conteiner-colum {
+   margin: 2%;
+}
+
+.colum {
+    width: 33%;
+    float: left;
 }
