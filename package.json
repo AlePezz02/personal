@@ -1,0 +1,14 @@
+{
+  "name": "c",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "scss": "sass --watch sass/style.scss css/style.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.81.0"
+  },
+  "description": ""
+}

@@ -1,0 +1,24 @@
+.sezione {
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    .navbar{
+        background-color: rgb(13, 13, 13);
+        height: 4rem;
+        display: grid;
+        justify-content: space-evenly;
+        align-content: center;
+        border-radius: 7px;
+
+         .botton{
+            &:hover{
+                color: #ff0000;
+                border-color: #ff0000;
+            }
+            font-size: 18px;
+            text-decoration: non;
+            color: rgb(91, 145, 11);
+            font-style: sans-serif;
+            }
+        }
+    }
