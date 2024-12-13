@@ -48,10 +48,25 @@ do {
 
 console.log("Hai inserito:", parola); */
 
-let number = 4
+/* let number = 4
 
 if (number > 5) {
     console.log("e maggiore di 5");
 }else if (number < 5) {
     console.log("e minore di 5");
+}
+ */
+
+let score = parseInt(prompt("Inserisci il tuo punteggio:"));
+
+if (score >= 90 && score <= 100) {
+    console.log("Voto ottimo");
+} else if (score >= 70 && score <= 89) {
+    console.log("Voto buono");
+} else if (score >= 60 && score <= 69) {
+    console.log("Voto sufficiente");
+} else if (score <= 59) {
+    console.log("Voto insufficiente");
+} else {
+    console.log("Valore non valido. Assicurati di inserire un numero.");
 }
