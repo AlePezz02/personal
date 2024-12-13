@@ -57,7 +57,7 @@ if (number > 5) {
 }
  */
 
-let score = parseInt(prompt("Inserisci il tuo punteggio:"));
+/* let score = parseInt(prompt("Inserisci il tuo punteggio:"));
 
 if (score >= 90 && score <= 100) {
     console.log("Voto ottimo");
@@ -69,4 +69,29 @@ if (score >= 90 && score <= 100) {
     console.log("Voto insufficiente");
 } else {
     console.log("Valore non valido. Assicurati di inserire un numero.");
-}
+} */
+
+    let number = 5;
+
+    switch (number) {
+        case 1:
+         console.log("e minore di 5")
+         break
+        case 2:
+         console.log("e minore di 5")
+         break
+        case 3:
+         console.log("e minore di 5")
+         break
+        case 4:
+         console.log("e minore di 5")
+         break
+        case 5:
+         console.log("e pari di 5")
+         break
+        case 6:
+         console.log("e maggiore di 5")
+         break
+         default:
+         console.log("non valido");            
+    }
