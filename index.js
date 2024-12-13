@@ -71,7 +71,7 @@ if (score >= 90 && score <= 100) {
     console.log("Valore non valido. Assicurati di inserire un numero.");
 } */
 
-    let number = 5;
+/*     let number = 5;
 
     switch (number) {
         case 1:
@@ -95,3 +95,12 @@ if (score >= 90 && score <= 100) {
          default:
          console.log("non valido");            
     }
+ */
+
+    const listanumeri = [
+        "uno",
+        "due",
+        "tre",
+        "quattro"
+    ];
+    console.log(listanumeri)
