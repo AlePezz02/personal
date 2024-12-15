@@ -98,7 +98,7 @@ if (score >= 90 && score <= 100) {
  */
 
 
-const array = [5, 10, 15, 20, 25];
+/* const array = [5, 10, 15, 20, 25];
 
 let somma = 0;
 
@@ -106,4 +106,14 @@ for (let i = 0; i < array.length; i++) {
   somma += array[i];
 }
 
-console.log("La somma dei numeri contenuti nell'array è:", somma);
+console.log("La somma dei numeri contenuti nell'array è:", somma); */
+
+const array = [5, 10, 15, 20, 25];
+
+const arrayInvertito = [];
+
+for (let i = array.length - 1; i >= 0; i--) {
+  arrayInvertito.push(array[i]);
+}
+
+console.log("Array invertito:", arrayInvertito);
