@@ -97,10 +97,13 @@ if (score >= 90 && score <= 100) {
     }
  */
 
-    const listanumeri = [
-        "uno",
-        "due",
-        "tre",
-        "quattro"
-    ];
-    console.log(listanumeri)
+
+const array = [5, 10, 15, 20, 25];
+
+let somma = 0;
+
+for (let i = 0; i < array.length; i++) {
+  somma += array[i];
+}
+
+console.log("La somma dei numeri contenuti nell'array è:", somma);
