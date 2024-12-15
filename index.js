@@ -108,7 +108,7 @@ for (let i = 0; i < array.length; i++) {
 
 console.log("La somma dei numeri contenuti nell'array è:", somma); */
 
-const array = [5, 10, 15, 20, 25];
+/* const array = [5, 10, 15, 20, 25];
 
 const arrayInvertito = [];
 
@@ -116,4 +116,19 @@ for (let i = array.length - 1; i >= 0; i--) {
   arrayInvertito.push(array[i]);
 }
 
-console.log("Array invertito:", arrayInvertito);
+console.log("Array invertito:", arrayInvertito); */
+
+
+const parole = [];
+
+for (let i = 0; i < 5; i++) {
+  const parola = prompt(`Inserisci la parola ${i + 1}:`); 
+  parole.push(parola); 
+}
+
+console.log("Parole con un numero dispari di lettere:");
+for (let i = 0; i < parole.length; i++) {
+  if (parole[i].length % 2 !== 0) { 
+    console.log(parole[i]); 
+  }
+}
