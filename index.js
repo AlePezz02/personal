@@ -144,3 +144,6 @@ console.log(person.age)
 person.age = 25
 
 console.log(person.age)
+
+person.job = "Developer"
+console.log(person)
