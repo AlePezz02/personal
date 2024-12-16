@@ -140,3 +140,7 @@ const person = {
 }
 console.log(person)
 console.log(person.age)
+
+person.age = 25
+
+console.log(person.age)
