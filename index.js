@@ -119,7 +119,7 @@ for (let i = array.length - 1; i >= 0; i--) {
 console.log("Array invertito:", arrayInvertito); */
 
 
-const parole = [];
+/* const parole = [];
 
 for (let i = 0; i < 5; i++) {
   const parola = prompt(`Inserisci la parola ${i + 1}:`); 
@@ -132,3 +132,10 @@ for (let i = 0; i < parole.length; i++) {
     console.log(parole[i]); 
   }
 }
+ */
+const person = {
+    name : "Gianni",
+    age : "19",
+    city : "Massafra"
+}
+console.log(person)
