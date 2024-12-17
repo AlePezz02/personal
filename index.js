@@ -155,7 +155,7 @@ console.log(person)
 
 
 
-function outerFunction(x) {
+/* function outerFunction(x) {
     function innerFunction(y) {
         return x + y; 
     }
@@ -166,4 +166,25 @@ const addFive = outerFunction(5);
 console.log(addFive(3)); 
 
 const addTen = outerFunction(10); 
-console.log(addTen(7));
+console.log(addTen(7)); */
+
+function outerFunction(x, initialValue) {
+    let result = initialValue; 
+
+   
+    function innerFunction(y) {
+        result += x + y; 
+        return result; 
+    }
+
+    return innerFunction; 
+}
+
+
+const addWithInitial = outerFunction(5, 10); 
+console.log(addWithInitial(3)); 
+console.log(addWithInitial(2)); 
+
+const anotherAdd = outerFunction(2, 0); 
+console.log(anotherAdd(4));
+console.log(anotherAdd(1)); 
