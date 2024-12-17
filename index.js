@@ -133,7 +133,7 @@ for (let i = 0; i < parole.length; i++) {
   }
 }
  */
-const person = {
+/* const person = {
     name : "Gianni",
     age : "19",
     city : "Massafra"
@@ -148,6 +148,22 @@ console.log(person.age)
 person.job = "Developer"
 console.log(person)
  */
-for (const proprietà in person) {
+/* for (const proprietà in person) {
     console.log(`Proprietà: ${proprietà}, Valore: ${person[proprietà]}`);
 }
+ */
+
+
+
+function outerFunction(x) {
+    function innerFunction(y) {
+        return x + y; 
+    }
+    return innerFunction; 
+}
+
+const addFive = outerFunction(5); 
+console.log(addFive(3)); 
+
+const addTen = outerFunction(10); 
+console.log(addTen(7));
