@@ -138,7 +138,7 @@ const person = {
     age : "19",
     city : "Massafra"
 }
-console.log(person)
+/* console.log(person)
 console.log(person.age)
 
 person.age = 25
@@ -147,3 +147,7 @@ console.log(person.age)
 
 person.job = "Developer"
 console.log(person)
+ */
+for (const proprietà in person) {
+    console.log(`Proprietà: ${proprietà}, Valore: ${person[proprietà]}`);
+}
