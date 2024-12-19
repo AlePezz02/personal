@@ -164,7 +164,7 @@ The Increment (++) Operator
 The Decrement (--) Operator */
 
 
-function createCounter(){
+/* function createCounter(){
     let count = 9
     return {
         increment:function(){
@@ -189,12 +189,22 @@ const counter = createCounter()
         grade:"Veteran",
         school:"Charlton"
     }
-/*     const keys = Object.keys(student);
+ *//*     const keys = Object.keys(student);
     console.log(student)
     console.log(keys)
 
     const keysValue = Object.values(student)
     console.log(keysValue)
  */
-    const keysEntr = Object.entries(student)
+/*     const keysEntr = Object.entries(student)
     console.log(keysEntr)
+ */
+    let numbers = [1, 2, 3, 4, 5];
+
+    numbers.forEach(number => {
+        console.log(number * 2);
+    });
+    
+    const squaredNumbers = numbers.map(number => number ** 2);
+    
+    console.log(squaredNumbers);
