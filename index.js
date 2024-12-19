@@ -192,3 +192,6 @@ const counter = createCounter()
     const keys = Object.keys(student);
     console.log(student)
     console.log(keys)
+
+    const keysValue = Object.values(student)
+    console.log(keysValue)
