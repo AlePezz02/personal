@@ -184,14 +184,17 @@ const counter = createCounter()
     console.log(counter.decrement())
 
     let student = {
-        name:"G",
-        age:"7",
-        grade:"6",
-        school:"2"
+        name:"Gianni",
+        age:"71",
+        grade:"Veteran",
+        school:"Charlton"
     }
-    const keys = Object.keys(student);
+/*     const keys = Object.keys(student);
     console.log(student)
     console.log(keys)
 
     const keysValue = Object.values(student)
     console.log(keysValue)
+ */
+    const keysEntr = Object.entries(student)
+    console.log(keysEntr)
