@@ -154,37 +154,41 @@ console.log(person)
  */
 
 
+/* The Addition (+) Operator
+The Subtraction (-) Operator
+The Multiplication (*) Operator
+The Division (/) Operator
+The Exponentiation (**) Operator
+The Remainder (%) Operator
+The Increment (++) Operator
+The Decrement (--) Operator */
 
-/* function outerFunction(x) {
-    function innerFunction(y) {
-        return x + y; 
+
+function createCounter(){
+    let count = 9
+    return {
+        increment:function(){
+            count += 1
+            return count
+
+        },
+        decrement:function(){
+            count -= 1
+            return count
+
+        }
     }
-    return innerFunction; 
 }
+const counter = createCounter()
+    console.log(counter.increment())
+    console.log(counter.decrement())
 
-const addFive = outerFunction(5); 
-console.log(addFive(3)); 
-
-const addTen = outerFunction(10); 
-console.log(addTen(7)); */
-
-function outerFunction(x, initialValue) {
-    let result = initialValue; 
-
-   
-    function innerFunction(y) {
-        result += x + y; 
-        return result; 
+    let student = {
+        name:"G",
+        age:"7",
+        grade:"6",
+        school:"2"
     }
-
-    return innerFunction; 
-}
-
-
-const addWithInitial = outerFunction(5, 10); 
-console.log(addWithInitial(3)); 
-console.log(addWithInitial(2)); 
-
-const anotherAdd = outerFunction(2, 0); 
-console.log(anotherAdd(4));
-console.log(anotherAdd(1)); 
+    const keys = Object.keys(student);
+    console.log(student)
+    console.log(keys)
