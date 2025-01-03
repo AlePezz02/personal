@@ -247,7 +247,7 @@ console.log("Somma totale delle spese:", totalExpenses);
 console.log("Array di parole ordinate:", words);
  */
 
-class Automobile {
+    class Automobile {
     constructor(marca, modello, anno, chilometraggio = 0) {
         this.marca = marca;
         this.modello = modello;
@@ -272,17 +272,45 @@ class Automobile {
         return `Chilometraggio attuale: ${this.chilometraggio} km`;
     }
 
-    #calcolaEtà() {
-        const annoCorrente = new Date().getFullYear();
-        return annoCorrente - this.anno;
-    }
-
-    mostraEtà() {
-        return `L'automobile ha ${this.#calcolaEtà()} anni.`;
+    _controllaChilometri() {
+        const limite = 100000;
+        if (this.chilometraggio > limite) {
+            return `⚠️ Attenzione: Il chilometraggio (${this.chilometraggio} km) ha superato il limite di ${limite} km.`;
+        }
+        return `✅ Chilometraggio entro i limiti (${this.chilometraggio} km).`;
     }
 }
 
-const miaAuto = new Automobile('Toyota', 'Corolla', 2020);
+class Elettrica extends Automobile {
+    constructor(marca, modello, anno, chilometraggio = 0, autonomia = 0) {
+        super(marca, modello, anno, chilometraggio);
+        this.autonomia = autonomia;
+    }
 
-console.log(miaAuto.descrizione());
-console.log(miaAuto.mostraEtà());
+    descrizione() {
+        return `Automobile Elettrica: ${this.marca} ${this.modello}, Anno: ${this.anno}, Autonomia: ${this.autonomia} km`;
+    }
+
+    ricarica(km) {
+        if (km > 0) {
+            this.autonomia += km;
+            console.log(`Autonomia aumentata di ${km} km. Autonomia totale: ${this.autonomia} km.`);
+        } else {
+            console.log('Errore: I chilometri di ricarica devono essere un valore positivo.');
+        }
+    }
+
+    mostraAutonomia() {
+        return `Autonomia attuale: ${this.autonomia} km`;
+    }
+
+    verificaStatoBatteria() {
+        console.log(this._controllaChilometri());
+    }
+}
+
+const miaAutoElettrica = new Elettrica('Tesla', 'Model 3', 2021, 105000, 350);
+
+console.log(miaAutoElettrica.descrizione());
+console.log(miaAutoElettrica.mostraChilometraggio());
+miaAutoElettrica.verificaStatoBatteria();
