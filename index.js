@@ -190,16 +190,16 @@ const counter = createCounter()
         school:"Charlton"
     }
  *//*     const keys = Object.keys(student);
-    console.log(student)
-    console.log(keys)
+   console.log(student)
+   console.log(keys)
 
-    const keysValue = Object.values(student)
-    console.log(keysValue)
- */
+   const keysValue = Object.values(student)
+   console.log(keysValue)
+*/
 /*     const keysEntr = Object.entries(student)
     console.log(keysEntr)
  */
-    let numbers = [1, 2, 3, 4, 5];
+/*     let numbers = [1, 2, 3, 4, 5];
 
     numbers.forEach(number => {
         console.log(number * 2);
@@ -207,4 +207,30 @@ const counter = createCounter()
     
     const squaredNumbers = numbers.map(number => number ** 2);
     
-    console.log(squaredNumbers);
+    console.log(squaredNumbers); */
+
+
+let students = [{
+    name: "mario",
+    grade: 50
+},
+{
+    name: "gianni",
+    grade: 65
+},
+{
+    name: "ale",
+    grade: 58
+},
+]
+
+let passedStudent = students.filter((student)=>{
+    return student.grade > 60;
+});
+
+let noPassedStudent = students.find((student)=>{
+    return student.grade < 60;
+})
+
+console.log(passedStudent)
+console.log(noPassedStudent)
