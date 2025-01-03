@@ -248,17 +248,33 @@ console.log("Array di parole ordinate:", words);
  */
 
 class Automobile {
-    constructor(marca, modello, anno) {
+    constructor(marca, modello, anno, chilometraggio = 0) {
         this.marca = marca;
         this.modello = modello;
         this.anno = anno;
+        this.chilometraggio = chilometraggio;
     }
 
     descrizione() {
         return `Automobile: ${this.marca} ${this.modello}, Anno: ${this.anno}`;
+    }
+
+    aggiungiChilometri(km) {
+        if (km > 0) {
+            this.chilometraggio += km;
+            console.log(`Chilometraggio aumentato di ${km} km. Chilometraggio totale: ${this.chilometraggio} km.`);
+        } else {
+            console.log('Errore: I chilometri aggiunti devono essere un valore positivo.');
+        }
+    }
+
+    mostraChilometraggio() {
+        return `Chilometraggio attuale: ${this.chilometraggio} km`;
     }
 }
 
 const miaAuto = new Automobile('Toyota', 'Corolla', 2020);
 
 console.log(miaAuto.descrizione());
+miaAuto.aggiungiChilometri(150);
+console.log(miaAuto.mostraChilometraggio());
