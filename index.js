@@ -247,7 +247,7 @@ console.log("Somma totale delle spese:", totalExpenses);
 console.log("Array di parole ordinate:", words);
  */
 
-    class Automobile {
+class Automobile {
     #contatoreChiamate = 0;
 
     constructor(marca, modello, anno, chilometraggio = 0) {
