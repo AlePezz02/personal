@@ -247,6 +247,7 @@ console.log("Somma totale delle spese:", totalExpenses);
 console.log("Array di parole ordinate:", words);
  */
 
+// Classe principale Automobile
 class Automobile {
     constructor(marca, modello, anno, chilometraggio = 0) {
         this.marca = marca;
@@ -273,8 +274,34 @@ class Automobile {
     }
 }
 
-const miaAuto = new Automobile('Toyota', 'Corolla', 2020);
+class Elettrica extends Automobile {
+    constructor(marca, modello, anno, chilometraggio = 0, autonomia = 0) {
+        super(marca, modello, anno, chilometraggio); 
+        this.autonomia = autonomia; 
+    }
 
-console.log(miaAuto.descrizione());
-miaAuto.aggiungiChilometri(150);
-console.log(miaAuto.mostraChilometraggio());
+    descrizione() {
+        return `Automobile Elettrica: ${this.marca} ${this.modello}, Anno: ${this.anno}, Autonomia: ${this.autonomia} km`;
+    }
+
+    ricarica(km) {
+        if (km > 0) {
+            this.autonomia += km;
+            console.log(`Autonomia aumentata di ${km} km. Autonomia totale: ${this.autonomia} km.`);
+        } else {
+            console.log('Errore: I chilometri di ricarica devono essere un valore positivo.');
+        }
+    }
+
+    mostraAutonomia() {
+        return `Autonomia attuale: ${this.autonomia} km`;
+    }
+}
+
+const miaAutoElettrica = new Elettrica('Tesla', 'Model S', 2023, 5000, 400);
+
+console.log(miaAutoElettrica.descrizione());
+miaAutoElettrica.aggiungiChilometri(200);
+console.log(miaAutoElettrica.mostraChilometraggio());
+miaAutoElettrica.ricarica(50);
+console.log(miaAutoElettrica.mostraAutonomia());
