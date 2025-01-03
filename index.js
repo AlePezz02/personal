@@ -210,7 +210,7 @@ const counter = createCounter()
     console.log(squaredNumbers); */
 
 
-let students = [{
+/* let students = [{
     name: "mario",
     grade: 50
 },
@@ -233,4 +233,15 @@ let noPassedStudent = students.find((student)=>{
 })
 
 console.log(passedStudent)
-console.log(noPassedStudent)
+console.log(noPassedStudent) */
+
+const expenses = [120, 45, 300, 78, 150];
+
+const totalExpenses = expenses.reduce((total, expense) => total + expense, 0);
+
+const words = ["banana", "apple", "cherry", "date"];
+
+words.sort();
+
+console.log("Somma totale delle spese:", totalExpenses);
+console.log("Array di parole ordinate:", words);
