@@ -271,38 +271,18 @@ class Automobile {
     mostraChilometraggio() {
         return `Chilometraggio attuale: ${this.chilometraggio} km`;
     }
-}
 
-Automobile.prototype.saluta = function() {
-    return `Ciao! Sono una ${this.marca} ${this.modello}.`;
-};
-
-class Elettrica extends Automobile {
-    constructor(marca, modello, anno, chilometraggio = 0, autonomia = 0) {
-        super(marca, modello, anno, chilometraggio);
-        this.autonomia = autonomia;
+    #calcolaEtà() {
+        const annoCorrente = new Date().getFullYear();
+        return annoCorrente - this.anno;
     }
 
-    descrizione() {
-        return `Automobile Elettrica: ${this.marca} ${this.modello}, Anno: ${this.anno}, Autonomia: ${this.autonomia} km`;
-    }
-
-    ricarica(km) {
-        if (km > 0) {
-            this.autonomia += km;
-            console.log(`Autonomia aumentata di ${km} km. Autonomia totale: ${this.autonomia} km.`);
-        } else {
-            console.log('Errore: I chilometri di ricarica devono essere un valore positivo.');
-        }
-    }
-
-    mostraAutonomia() {
-        return `Autonomia attuale: ${this.autonomia} km`;
+    mostraEtà() {
+        return `L'automobile ha ${this.#calcolaEtà()} anni.`;
     }
 }
 
 const miaAuto = new Automobile('Toyota', 'Corolla', 2020);
-const miaAutoElettrica = new Elettrica('Tesla', 'Model 3', 2023, 1000, 300);
 
-console.log(miaAuto.saluta()); 
-console.log(miaAutoElettrica.saluta()); 
+console.log(miaAuto.descrizione());
+console.log(miaAuto.mostraEtà());
