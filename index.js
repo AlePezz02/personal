@@ -272,45 +272,24 @@ console.log("Array di parole ordinate:", words);
         return `Chilometraggio attuale: ${this.chilometraggio} km`;
     }
 
-    _controllaChilometri() {
-        const limite = 100000;
-        if (this.chilometraggio > limite) {
-            return `⚠️ Attenzione: Il chilometraggio (${this.chilometraggio} km) ha superato il limite di ${limite} km.`;
+    static confrontaChilometraggio(auto1, auto2) {
+        if (!(auto1 instanceof Automobile) || !(auto2 instanceof Automobile)) {
+            throw new Error('Entrambi gli oggetti devono essere istanze della classe Automobile.');
         }
-        return `✅ Chilometraggio entro i limiti (${this.chilometraggio} km).`;
-    }
-}
 
-class Elettrica extends Automobile {
-    constructor(marca, modello, anno, chilometraggio = 0, autonomia = 0) {
-        super(marca, modello, anno, chilometraggio);
-        this.autonomia = autonomia;
-    }
-
-    descrizione() {
-        return `Automobile Elettrica: ${this.marca} ${this.modello}, Anno: ${this.anno}, Autonomia: ${this.autonomia} km`;
-    }
-
-    ricarica(km) {
-        if (km > 0) {
-            this.autonomia += km;
-            console.log(`Autonomia aumentata di ${km} km. Autonomia totale: ${this.autonomia} km.`);
+        if (auto1.chilometraggio > auto2.chilometraggio) {
+            return `${auto1.marca} ${auto1.modello} ha un chilometraggio maggiore (${auto1.chilometraggio} km) rispetto a ${auto2.marca} ${auto2.modello} (${auto2.chilometraggio} km).`;
+        } else if (auto2.chilometraggio > auto1.chilometraggio) {
+            return `${auto2.marca} ${auto2.modello} ha un chilometraggio maggiore (${auto2.chilometraggio} km) rispetto a ${auto1.marca} ${auto1.modello} (${auto1.chilometraggio} km).`;
         } else {
-            console.log('Errore: I chilometri di ricarica devono essere un valore positivo.');
+            return `${auto1.marca} ${auto1.modello} e ${auto2.marca} ${auto2.modello} hanno lo stesso chilometraggio (${auto1.chilometraggio} km).`;
         }
-    }
-
-    mostraAutonomia() {
-        return `Autonomia attuale: ${this.autonomia} km`;
-    }
-
-    verificaStatoBatteria() {
-        console.log(this._controllaChilometri());
     }
 }
 
-const miaAutoElettrica = new Elettrica('Tesla', 'Model 3', 2021, 105000, 350);
+const auto1 = new Automobile('Toyota', 'Corolla', 2020, 50000);
+const auto2 = new Automobile('Honda', 'Civic', 2019, 60000);
 
-console.log(miaAutoElettrica.descrizione());
-console.log(miaAutoElettrica.mostraChilometraggio());
-miaAutoElettrica.verificaStatoBatteria();
+console.log(auto1.descrizione());
+console.log(auto2.descrizione());
+console.log(Automobile.confrontaChilometraggio(auto1, auto2));
