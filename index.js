@@ -235,7 +235,7 @@ let noPassedStudent = students.find((student)=>{
 console.log(passedStudent)
 console.log(noPassedStudent) */
 
-const expenses = [120, 45, 300, 78, 150];
+/* const expenses = [120, 45, 300, 78, 150];
 
 const totalExpenses = expenses.reduce((total, expense) => total + expense, 0);
 
@@ -245,3 +245,20 @@ words.sort();
 
 console.log("Somma totale delle spese:", totalExpenses);
 console.log("Array di parole ordinate:", words);
+ */
+
+class Automobile {
+    constructor(marca, modello, anno) {
+        this.marca = marca;
+        this.modello = modello;
+        this.anno = anno;
+    }
+
+    descrizione() {
+        return `Automobile: ${this.marca} ${this.modello}, Anno: ${this.anno}`;
+    }
+}
+
+const miaAuto = new Automobile('Toyota', 'Corolla', 2020);
+
+console.log(miaAuto.descrizione());
