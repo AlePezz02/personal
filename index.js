@@ -248,7 +248,8 @@ console.log("Array di parole ordinate:", words);
  */
 
 class Automobile {
-    #contatoreChiamate = 0;
+    #contatoreGenerale = 0;
+    #contatoreAggiungiChilometri = 0;
 
     constructor(marca, modello, anno, chilometraggio = 0) {
         this.marca = marca;
@@ -258,14 +259,15 @@ class Automobile {
     }
 
     descrizione() {
-        this.#incrementaContatore(); 
+        this.#incrementaContatoreGenerale();
         return `Automobile: ${this.marca} ${this.modello}, Anno: ${this.anno}`;
     }
 
     aggiungiChilometri(km) {
         if (km > 0) {
             this.chilometraggio += km;
-            this.#incrementaContatore(); 
+            this.#incrementaContatoreGenerale();
+            this.#incrementaContatoreAggiungiChilometri(); 
             console.log(`Chilometraggio aumentato di ${km} km. Chilometraggio totale: ${this.chilometraggio} km.`);
         } else {
             console.log('Errore: I chilometri aggiunti devono essere un valore positivo.');
@@ -276,12 +278,20 @@ class Automobile {
         return `Chilometraggio attuale: ${this.chilometraggio} km`;
     }
 
-    #incrementaContatore() {
-        this.#contatoreChiamate++;
+    #incrementaContatoreGenerale() {
+        this.#contatoreGenerale++;
+    }
+
+    #incrementaContatoreAggiungiChilometri() {
+        this.#contatoreAggiungiChilometri++;
     }
 
     mostraContatoreChiamate() {
-        return `I metodi tracciati sono stati chiamati ${this.#contatoreChiamate} volte.`;
+        return `I metodi tracciati sono stati chiamati ${this.#contatoreGenerale} volte.`;
+    }
+
+    mostraContatoreChiamateAggiungiChilometri() {
+        return `Il metodo 'aggiungiChilometri' è stato chiamato ${this.#contatoreAggiungiChilometri} volte.`;
     }
 }
 
@@ -293,3 +303,4 @@ miaAuto.aggiungiChilometri(200);
 
 console.log(miaAuto.mostraChilometraggio());
 console.log(miaAuto.mostraContatoreChiamate());
+console.log(miaAuto.mostraContatoreChiamateAggiungiChilometri());
