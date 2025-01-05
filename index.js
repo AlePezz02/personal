@@ -259,7 +259,7 @@ class Automobile {
     }
 
     descrizione() {
-        this.#incrementaContatoreGenerale();
+        this.#incrementaContatoreGenerale(); 
         return `Automobile: ${this.marca} ${this.modello}, Anno: ${this.anno}`;
     }
 
@@ -274,7 +274,7 @@ class Automobile {
         }
     }
 
-    mostraChilometraggio() {
+    get chilometraggioAttuale() {
         return `Chilometraggio attuale: ${this.chilometraggio} km`;
     }
 
@@ -301,6 +301,7 @@ console.log(miaAuto.descrizione());
 miaAuto.aggiungiChilometri(100);
 miaAuto.aggiungiChilometri(200);
 
-console.log(miaAuto.mostraChilometraggio());
+console.log(miaAuto.chilometraggioAttuale);
+
 console.log(miaAuto.mostraContatoreChiamate());
 console.log(miaAuto.mostraContatoreChiamateAggiungiChilometri());
