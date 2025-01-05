@@ -267,7 +267,7 @@ class Automobile {
         if (km > 0) {
             this.chilometraggio += km;
             this.#incrementaContatoreGenerale();
-            this.#incrementaContatoreAggiungiChilometri(); 
+            this.#incrementaContatoreAggiungiChilometri();
             console.log(`Chilometraggio aumentato di ${km} km. Chilometraggio totale: ${this.chilometraggio} km.`);
         } else {
             console.log('Errore: I chilometri aggiunti devono essere un valore positivo.');
@@ -276,6 +276,15 @@ class Automobile {
 
     get chilometraggioAttuale() {
         return `Chilometraggio attuale: ${this.chilometraggio} km`;
+    }
+
+    set chilometraggioAttuale(nuovoChilometraggio) {
+        if (nuovoChilometraggio >= this.chilometraggio) {
+            this.chilometraggio = nuovoChilometraggio;
+            console.log(`Il chilometraggio è stato aggiornato a ${this.chilometraggio} km.`);
+        } else {
+            console.log('Errore: Il nuovo chilometraggio non può essere inferiore a quello attuale.');
+        }
     }
 
     #incrementaContatoreGenerale() {
@@ -302,6 +311,9 @@ miaAuto.aggiungiChilometri(100);
 miaAuto.aggiungiChilometri(200);
 
 console.log(miaAuto.chilometraggioAttuale);
+
+miaAuto.chilometraggioAttuale = 400; 
+miaAuto.chilometraggioAttuale = 300; 
 
 console.log(miaAuto.mostraContatoreChiamate());
 console.log(miaAuto.mostraContatoreChiamateAggiungiChilometri());
