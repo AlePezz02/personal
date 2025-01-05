@@ -266,8 +266,8 @@ class Automobile {
     aggiungiChilometri(km) {
         if (km > 0) {
             this.chilometraggio += km;
-            this.#incrementaContatoreGenerale();
-            this.#incrementaContatoreAggiungiChilometri();
+            this.#incrementaContatoreGenerale(); 
+            this.#incrementaContatoreAggiungiChilometri(); 
             console.log(`Chilometraggio aumentato di ${km} km. Chilometraggio totale: ${this.chilometraggio} km.`);
         } else {
             console.log('Errore: I chilometri aggiunti devono essere un valore positivo.');
@@ -304,16 +304,35 @@ class Automobile {
     }
 }
 
-const miaAuto = new Automobile('Toyota', 'Corolla', 2020);
+class Camion extends Automobile {
+    constructor(marca, modello, anno, chilometraggio = 0, caricoMassimo = 0) {
+        super(marca, modello, anno, chilometraggio);
+        this.caricoMassimo = caricoMassimo;
+    }
 
-console.log(miaAuto.descrizione());
-miaAuto.aggiungiChilometri(100);
-miaAuto.aggiungiChilometri(200);
+    descrizione() {
+        return `${super.descrizione()} Carico massimo: ${this.caricoMassimo} kg`;
+    }
 
-console.log(miaAuto.chilometraggioAttuale);
+    caricaMerci(peso) {
+        if (peso > 0 && peso <= this.caricoMassimo) {
+            console.log(`Merci caricate con successo: ${peso} kg.`);
+        } else {
+            console.log(`Errore: Il peso delle merci supera il carico massimo di ${this.caricoMassimo} kg.`);
+        }
+    }
+}
 
-miaAuto.chilometraggioAttuale = 400; 
-miaAuto.chilometraggioAttuale = 300; 
+const mioCamion = new Camion('Mercedes', 'Actros', 2022, 5000, 20000);
 
-console.log(miaAuto.mostraContatoreChiamate());
-console.log(miaAuto.mostraContatoreChiamateAggiungiChilometri());
+console.log(mioCamion.descrizione());
+mioCamion.aggiungiChilometri(300);
+mioCamion.caricaMerci(15000);
+mioCamion.caricaMerci(25000); 
+
+console.log(mioCamion.chilometraggioAttuale);
+
+mioCamion.chilometraggioAttuale = 6000;
+
+console.log(mioCamion.mostraContatoreChiamate());
+console.log(mioCamion.mostraContatoreChiamateAggiungiChilometri());
