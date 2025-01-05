@@ -258,13 +258,14 @@ class Automobile {
     }
 
     descrizione() {
-        this.#incrementaContatore();
+        this.#incrementaContatore(); 
         return `Automobile: ${this.marca} ${this.modello}, Anno: ${this.anno}`;
     }
 
     aggiungiChilometri(km) {
         if (km > 0) {
             this.chilometraggio += km;
+            this.#incrementaContatore(); 
             console.log(`Chilometraggio aumentato di ${km} km. Chilometraggio totale: ${this.chilometraggio} km.`);
         } else {
             console.log('Errore: I chilometri aggiunti devono essere un valore positivo.');
@@ -280,14 +281,15 @@ class Automobile {
     }
 
     mostraContatoreChiamate() {
-        return `Il metodo 'descrizione' è stato chiamato ${this.#contatoreChiamate} volte.`;
+        return `I metodi tracciati sono stati chiamati ${this.#contatoreChiamate} volte.`;
     }
 }
 
 const miaAuto = new Automobile('Toyota', 'Corolla', 2020);
 
 console.log(miaAuto.descrizione());
-console.log(miaAuto.descrizione());
-console.log(miaAuto.descrizione());
+miaAuto.aggiungiChilometri(100);
+miaAuto.aggiungiChilometri(200);
 
+console.log(miaAuto.mostraChilometraggio());
 console.log(miaAuto.mostraContatoreChiamate());
