@@ -302,6 +302,14 @@ class Automobile {
     mostraContatoreChiamateAggiungiChilometri() {
         return `Il metodo 'aggiungiChilometri' chiamato ${this.#contatoreAggiungiChilometri} volte.`;
     }
+
+    static verificaIstanza(obj, classe) {
+        if (obj instanceof classe) {
+            return `L'oggetto è un'istanza della classe ${classe.name}.`;
+        } else {
+            return `L'oggetto NON è un'istanza della classe ${classe.name}.`;
+        }
+    }
 }
 
 class Camion extends Automobile {
@@ -332,17 +340,17 @@ class Camion extends Automobile {
     }
 }
 
-const mioCamion = new Camion('Volvo', 'FH16', 2021, 10000, 30000);
+const miaAuto = new Automobile('Toyota', 'Corolla', 2020, 15000);
+const mioCamion = new Camion('Scania', 'R500', 2022, 20000, 40000);
 
+console.log(miaAuto.descrizione());
 console.log(mioCamion.descrizione());
-mioCamion.aggiungiChilometri(500);
-mioCamion.carica(10000); 
-mioCamion.carica(25000); 
-mioCamion.carica(-500);  
-mioCamion.scarica();     
 
-console.log(mioCamion.chilometraggioAttuale);
-mioCamion.chilometraggioAttuale = 12000;
+console.log(`miaAuto è un'istanza di Automobile?`, miaAuto instanceof Automobile); 
+console.log(`mioCamion è un'istanza di Camion?`, mioCamion instanceof Camion); 
+console.log(`mioCamion è un'istanza di Automobile?`, mioCamion instanceof Automobile); 
 
-console.log(mioCamion.mostraContatoreChiamate());
-console.log(mioCamion.mostraContatoreChiamateAggiungiChilometri());
+console.log(Automobile.verificaIstanza(miaAuto, Automobile)); 
+console.log(Automobile.verificaIstanza(mioCamion, Camion)); 
+console.log(Automobile.verificaIstanza(mioCamion, Automobile)); 
+console.log(Automobile.verificaIstanza(miaAuto, Camion)); 
