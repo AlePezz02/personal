@@ -259,18 +259,18 @@ class Automobile {
     }
 
     descrizione() {
-        this.#incrementaContatoreGenerale(); 
+        this.#incrementaContatoreGenerale();
         return `Automobile: ${this.marca} ${this.modello}, Anno: ${this.anno}`;
     }
 
     aggiungiChilometri(km) {
         if (km > 0) {
             this.chilometraggio += km;
-            this.#incrementaContatoreGenerale(); 
-            this.#incrementaContatoreAggiungiChilometri(); 
-            console.log(`Chilometraggio aumentato di ${km} km. Chilometraggio totale: ${this.chilometraggio} km.`);
+            this.#incrementaContatoreGenerale();
+            this.#incrementaContatoreAggiungiChilometri();
+            console.log(`Chilometraggio aumentato di ${km} km. Totale: ${this.chilometraggio} km.`);
         } else {
-            console.log('Errore: I chilometri aggiunti devono essere un valore positivo.');
+            console.log('Errore: I chilometri devono essere un valore positivo.');
         }
     }
 
@@ -281,7 +281,7 @@ class Automobile {
     set chilometraggioAttuale(nuovoChilometraggio) {
         if (nuovoChilometraggio >= this.chilometraggio) {
             this.chilometraggio = nuovoChilometraggio;
-            console.log(`Il chilometraggio è stato aggiornato a ${this.chilometraggio} km.`);
+            console.log(`Chilometraggio aggiornato a ${this.chilometraggio} km.`);
         } else {
             console.log('Errore: Il nuovo chilometraggio non può essere inferiore a quello attuale.');
         }
@@ -296,43 +296,53 @@ class Automobile {
     }
 
     mostraContatoreChiamate() {
-        return `I metodi tracciati sono stati chiamati ${this.#contatoreGenerale} volte.`;
+        return `Metodi tracciati chiamati ${this.#contatoreGenerale} volte.`;
     }
 
     mostraContatoreChiamateAggiungiChilometri() {
-        return `Il metodo 'aggiungiChilometri' è stato chiamato ${this.#contatoreAggiungiChilometri} volte.`;
+        return `Il metodo 'aggiungiChilometri' chiamato ${this.#contatoreAggiungiChilometri} volte.`;
     }
 }
 
 class Camion extends Automobile {
     constructor(marca, modello, anno, chilometraggio = 0, caricoMassimo = 0) {
         super(marca, modello, anno, chilometraggio);
-        this.caricoMassimo = caricoMassimo;
+        this.caricoMassimo = caricoMassimo; 
+        this.caricoAttuale = 0; 
     }
 
     descrizione() {
-        return `${super.descrizione()} Carico massimo: ${this.caricoMassimo} kg`;
+        return `${super.descrizione()} | Carico massimo: ${this.caricoMassimo} kg | Carico attuale: ${this.caricoAttuale} kg`;
     }
 
-    caricaMerci(peso) {
-        if (peso > 0 && peso <= this.caricoMassimo) {
-            console.log(`Merci caricate con successo: ${peso} kg.`);
+    carica(kg) {
+        if (kg > 0 && (this.caricoAttuale + kg) <= this.caricoMassimo) {
+            this.caricoAttuale += kg;
+            console.log(`Carico aggiunto: ${kg} kg. Carico totale: ${this.caricoAttuale} kg.`);
+        } else if (kg <= 0) {
+            console.log('Errore: Il peso del carico deve essere positivo.');
         } else {
-            console.log(`Errore: Il peso delle merci supera il carico massimo di ${this.caricoMassimo} kg.`);
+            console.log(`Errore: Il carico totale (${this.caricoAttuale + kg} kg) supera il carico massimo (${this.caricoMassimo} kg).`);
         }
+    }
+
+    scarica() {
+        console.log(`Carico scaricato: ${this.caricoAttuale} kg.`);
+        this.caricoAttuale = 0;
     }
 }
 
-const mioCamion = new Camion('Mercedes', 'Actros', 2022, 5000, 20000);
+const mioCamion = new Camion('Volvo', 'FH16', 2021, 10000, 30000);
 
 console.log(mioCamion.descrizione());
-mioCamion.aggiungiChilometri(300);
-mioCamion.caricaMerci(15000);
-mioCamion.caricaMerci(25000); 
+mioCamion.aggiungiChilometri(500);
+mioCamion.carica(10000); 
+mioCamion.carica(25000); 
+mioCamion.carica(-500);  
+mioCamion.scarica();     
 
 console.log(mioCamion.chilometraggioAttuale);
-
-mioCamion.chilometraggioAttuale = 6000;
+mioCamion.chilometraggioAttuale = 12000;
 
 console.log(mioCamion.mostraContatoreChiamate());
 console.log(mioCamion.mostraContatoreChiamateAggiungiChilometri());
