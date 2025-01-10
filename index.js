@@ -343,14 +343,43 @@ class Camion extends Automobile {
 const miaAuto = new Automobile('Toyota', 'Corolla', 2020, 15000);
 const mioCamion = new Camion('Scania', 'R500', 2022, 20000, 40000);
 
-console.log(miaAuto.descrizione());
+/* console.log(miaAuto.descrizione());
 console.log(mioCamion.descrizione());
 
 console.log(`miaAuto è un'istanza di Automobile?`, miaAuto instanceof Automobile); 
 console.log(`mioCamion è un'istanza di Camion?`, mioCamion instanceof Camion); 
 console.log(`mioCamion è un'istanza di Automobile?`, mioCamion instanceof Automobile); 
-
-console.log(Automobile.verificaIstanza(miaAuto, Automobile)); 
+ */
+/* console.log(Automobile.verificaIstanza(miaAuto, Automobile)); 
 console.log(Automobile.verificaIstanza(mioCamion, Camion)); 
 console.log(Automobile.verificaIstanza(mioCamion, Automobile)); 
 console.log(Automobile.verificaIstanza(miaAuto, Camion)); 
+ */
+
+
+/* Crea un array chiamato numbers contenente i numeri da 1 a 5.
+ Usa forEach per stampare ogni numero moltiplicato per 2. Usa map per creare un nuovo array squaredNumbers contenente i quadrati di ogni numero in numbers.
+  Stampa il nuovo array squaredNumbers sulla console.
+ */
+
+/*   const numbers = [1,2,3,4,5]
+
+  numbers.forEach(element => {
+    console.log(element * 2)
+});
+
+let squaredNumbers = numbers.map(numbers => {
+    return numbers ** 2
+})
+    console.log(squaredNumbers)
+ */
+
+
+    let lista = [1,2,3,4,5]
+
+    let [primo , secondo] = lista
+
+    console.log(primo)
+    console.log(secondo)
+
+
