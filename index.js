@@ -389,14 +389,14 @@ let squaredNumbers = numbers.map(numbers => {
 
 let persona = {
     nome: "Mario",
-    età: 30,
+    eta: 30,
     professione: "Sviluppatore",
     città: "Roma"
   }
   
-  let { nome, età, professione } = persona
+  let { nome: nomePersona, eta: etaPersona, professione: lavoro } = persona
   
-  console.log(nome)    
-  console.log(età)      
-  console.log(professione)
-  
+  console.log(nomePersona)   
+  console.log(etaPersona)
+  console.log(lavoro)       
+    
