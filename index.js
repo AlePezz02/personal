@@ -374,7 +374,7 @@ let squaredNumbers = numbers.map(numbers => {
     console.log(squaredNumbers)
  */
 
-
+/* 
     let lista = [1,2,3,4,]
 
     let [primo, secondo, terzo, quarto, quinto = 0] = lista
@@ -385,3 +385,18 @@ let squaredNumbers = numbers.map(numbers => {
     console.log(quarto)
     console.log(quinto) 
 
+ */
+
+let persona = {
+    nome: "Mario",
+    età: 30,
+    professione: "Sviluppatore",
+    città: "Roma"
+  }
+  
+  let { nome, età, professione } = persona
+  
+  console.log(nome)    
+  console.log(età)      
+  console.log(professione)
+  
