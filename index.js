@@ -375,11 +375,13 @@ let squaredNumbers = numbers.map(numbers => {
  */
 
 
-    let lista = [1,2,3,4,5]
+    let lista = [1,2,3,4,]
 
-    let [primo , terzo] = lista
+    let [primo, secondo, terzo, quarto, quinto = 0] = lista
 
-    console.log(primo)
-    console.log(terzo)
-
+    console.log(primo) 
+    console.log(secondo)
+    console.log(terzo)   
+    console.log(quarto)
+    console.log(quinto) 
 
