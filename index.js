@@ -387,16 +387,14 @@ let squaredNumbers = numbers.map(numbers => {
 
  */
 
-let persona = {
-    nome: "Mario",
-    eta: 30,
-    professione: "Sviluppatore",
-    città: "Roma"
-  }
-  
-  let { nome: nomePersona, eta: etaPersona, professione: lavoro } = persona
-  
-  console.log(nomePersona)   
-  console.log(etaPersona)
-  console.log(lavoro)       
-    
+    const persona = {
+        nome: "Giulia",
+        professione: "Designer"
+      }
+      
+      const { nome, età = 25, professione, città = "Milano" } = persona
+      
+      console.log(nome)      
+      console.log(età)       
+      console.log(professione)
+      console.log(città)      
