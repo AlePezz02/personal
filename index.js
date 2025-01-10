@@ -377,9 +377,9 @@ let squaredNumbers = numbers.map(numbers => {
 
     let lista = [1,2,3,4,5]
 
-    let [primo , secondo] = lista
+    let [primo , terzo] = lista
 
     console.log(primo)
-    console.log(secondo)
+    console.log(terzo)
 
 
