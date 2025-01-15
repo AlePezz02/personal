@@ -387,7 +387,7 @@ let squaredNumbers = numbers.map(numbers => {
  */
 
 
-     const persona = {
+/*      const persona = {
         nome: "Giulia",
         professione: "Designer"
       }
@@ -419,7 +419,7 @@ let squaredNumbers = numbers.map(numbers => {
 
       console.log(listaCompleta)
 
- 
+ */ 
 
 
 /*       let object = {
@@ -437,3 +437,12 @@ let squaredNumbers = numbers.map(numbers => {
       let [first, second, ...rest] = frutti
 
       console.log(rest) */
+
+const numeri = [10, 20, 30, 40, 50];
+
+const [primo, secondo, ...resto] = numeri;
+
+console.log("Primo:", primo);        
+console.log("Secondo:", secondo);    
+console.log("Resto:", resto);
+        
