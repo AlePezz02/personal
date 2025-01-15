@@ -387,7 +387,7 @@ let squaredNumbers = numbers.map(numbers => {
 
  */
 
-    const persona = {
+/*     const persona = {
         nome: "Giulia",
         professione: "Designer"
       }
@@ -397,4 +397,43 @@ let squaredNumbers = numbers.map(numbers => {
       console.log(nome)      
       console.log(età)       
       console.log(professione)
-      console.log(città)      
+      console.log(città)       */
+/* 
+
+
+      let lista = [1,2,3,4,]
+
+      let listaCopia = [...lista]
+
+      console.log(lista)
+      console.log(listaCopia)
+ */
+
+
+
+/* 
+      let lista1 = [1,2,3,4,5,6]
+      let lista2 = [7,8,9,10,11]
+
+      let listaCompleta = [...lista1 , ...lista2]
+
+      console.log(listaCompleta)
+
+ */
+
+
+      let object = {
+        nome: 'mario',
+      }
+
+      let objectCopia = {...object, age:'16'}
+
+
+      console.log(object)
+      console.log(objectCopia)
+
+      let frutti = ['mela' , 'pera', 'banana', 'kiwi'];
+
+      let [first, second, ...rest] = frutti
+
+      console.log(rest)
