@@ -438,11 +438,27 @@ let squaredNumbers = numbers.map(numbers => {
 
       console.log(rest) */
 
-const numeri = [10, 20, 30, 40, 50];
+/* const numeri = [10, 20, 30, 40, 50];
 
 const [primo, secondo, ...resto] = numeri;
 
 console.log("Primo:", primo);        
 console.log("Secondo:", secondo);    
 console.log("Resto:", resto);
-        
+ */        
+
+// Dichiarazione dell'oggetto
+const persona = {
+    nome: "Luca",
+    età: 30,
+    città: "Roma",
+    lavoro: "Sviluppatore",
+    hobby: "Fotografia"
+  };
+  
+  const { nome, età, ...resto } = persona;
+  
+  console.log("Nome:", nome);      
+  console.log("Età:", età);        
+  console.log("Resto:", resto);     
+  
