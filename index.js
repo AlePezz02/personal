@@ -481,7 +481,7 @@ console.log("Resto:", resto);
   console.log(convert)
  */
 
-let jsonString = `[
+/* let jsonString = `[
     {
         "nome": "Mario",
         "cognome": "Rossi",
@@ -506,3 +506,11 @@ personeArray.push(nuovaPersona);
 let jsonAggiornato = JSON.stringify(personeArray, null, 2);
 
 console.log(jsonAggiornato);
+ */
+
+let nome = "Mario";
+let cognome = "Rossi";
+
+let nomeCompleto = `${nome} ${cognome}`;
+
+console.log(nomeCompleto);
