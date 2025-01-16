@@ -447,8 +447,7 @@ console.log("Secondo:", secondo);
 console.log("Resto:", resto);
  */        
 
-// Dichiarazione dell'oggetto
-const persona = {
+ /* const persona = {
     nome: "Luca",
     età: 30,
     città: "Roma",
@@ -460,5 +459,23 @@ const persona = {
   
   console.log("Nome:", nome);      
   console.log("Età:", età);        
-  console.log("Resto:", resto);     
+  console.log("Resto:", resto); */     
+
+
+
+  const studente = {
+    nome: "Anna",
+    età: 22,
+    corso: "Informatica",
+    esami: ["Matematica", "Programmazione", "Database"]
+  };
   
+  const jsonString = JSON.stringify(studente);
+  
+  console.log("Stringa JSON:", jsonString);
+  
+
+  let stringaJson ="{'nome: Anna','età: 22','corso: Informatica','esami: [Matematica, Programmazione, Database]'}";
+
+  let convert = JSON.parse(stringaJson)
+  console.log(convert)
