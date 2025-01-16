@@ -463,7 +463,7 @@ console.log("Resto:", resto);
 
 
 
-  const studente = {
+/*   const studente = {
     nome: "Anna",
     età: 22,
     corso: "Informatica",
@@ -479,3 +479,30 @@ console.log("Resto:", resto);
 
   let convert = JSON.parse(stringaJson)
   console.log(convert)
+ */
+
+let jsonString = `[
+    {
+        "nome": "Mario",
+        "cognome": "Rossi",
+        "eta": 30
+    },
+    {
+        "nome": "Luisa",
+        "cognome": "Verdi",
+        "eta": 25
+    }
+]`;
+
+let personeArray = JSON.parse(jsonString);
+
+let nuovaPersona = {
+    nome: "Giulia",
+    cognome: "Bianchi",
+    eta: 28
+};
+personeArray.push(nuovaPersona);
+
+let jsonAggiornato = JSON.stringify(personeArray, null, 2);
+
+console.log(jsonAggiornato);
